@@ -40,7 +40,6 @@ def vectorize_database_search(model: Model, query, vector_db: np.ndarray):
     index = np.argmax(same,axis=1)
     print("Similarity for all data:", same)
     print("Similarity for all data:", index)
-    # print("Max similarity: ",  same[0][index])
     return index
 
 def main():
