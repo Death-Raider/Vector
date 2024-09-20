@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request, HTTPException
 from transformer import Model
 import json
 import time
+import uvicorn
 
 app = FastAPI()
 
@@ -26,6 +27,11 @@ async def generate_embeddings(request: Request):
     except json.JSONDecodeError:
         raise HTTPException(status_code=400, detail="Invalid JSON data")
 
-@app.get("/")
-async def generate_embeddings():
-    return {"connection": "successful"}
+# GET Request at "/" should be forbidden
+# @app.get("/")
+# async def generate_embeddings():
+#     return {"connection": "successful"}
+
+# host the app only after the model is loaded
+if __name__ == '__main__':
+    uvicorn.run(app, host="127.0.0.1", port=3000, log_level="info")

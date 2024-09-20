@@ -3,3 +3,4 @@ tf-keras
 numpy
 fastapi
 pandas
+uvicorn

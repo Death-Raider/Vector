@@ -30,7 +30,7 @@ class Model:
     def getEmbeddings(self,prompt:list[str]):
         query_embedding = self.model.encode(prompt)
         return query_embedding
-    
-    def compare(self,emb1,emb2):
-        similarity = self.model.similarity(emb1, emb2)
-        return similarity
+    # not used thus far
+    # def compare(self,emb1,emb2):
+    #     similarity = self.model.similarity(emb1, emb2)
+    #     return similarity
